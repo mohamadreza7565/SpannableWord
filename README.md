@@ -28,9 +28,10 @@ allprojects {
 
 ```java
 
-SpannableWords spanOne = new SpannableWords()
+   SpannableWords spanOne = new SpannableWords()
                 .append("Hello", new StyleSpan(Typeface.BOLD_ITALIC))
-                .append(" my friends", new UnderlineSpan());
+                .append(" my", new StyleSpan(Typeface.BOLD_ITALIC))
+                .append(" friends", new ForegroundColorSpan(Color.RED));
 
 ```
 
