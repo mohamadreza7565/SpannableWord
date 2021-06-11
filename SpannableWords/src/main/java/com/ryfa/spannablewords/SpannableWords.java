@@ -49,19 +49,14 @@ public class SpannableWords extends SpannableStringBuilder {
 
     public SpannableWords findAndSpan(String target, GetSpan getSpan) {
 
-        ArrayList<String> words = new ArrayList<>();
-        String[] splitOne = toString().split("\\W+");
+        String[] split = toString().split("\\W+");
 
-        for (int i = 0; i < splitOne.length; i++) {
-                words.add(splitOne[i]);
-        }
+        for (int i = 0; i < split.length; i++) {
 
-        for (int i = 0; i < words.size(); i++) {
-
-            if (words.get(i).equals(target)) {
+            if (split[i].equals(target)) {
                 int startSpan = 0, endSpan = 0;
-                startSpan = toString().indexOf(words.get(i));
-                endSpan = startSpan + words.get(i).length();
+                startSpan = toString().indexOf(split[i]);
+                endSpan = startSpan + split[i].length();
 
                 if (startSpan < 0)
                     break;
