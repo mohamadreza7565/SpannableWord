@@ -77,29 +77,24 @@ public class SpannableWords extends SpannableStringBuilder {
 
     public SpannableWords findAndSpan(String target, boolean contains, boolean toLowerCase, GetSpan getSpan) {
 
-        ArrayList<String> words = new ArrayList<>();
-        String[] splitOne = toString().split("\\W+");
+        String[] split = toString().split("\\W+");
 
-        for (int i = 0; i < splitOne.length; i++) {
-            words.add(splitOne[i]);
-        }
-
-        for (int i = 0; i < words.size(); i++) {
+        for (int i = 0; i < split.length; i++) {
             String word;
             String currentTarget;
             if (toLowerCase) {
-                word = words.get(i).toLowerCase();
+                word = split[i].toLowerCase();
                 currentTarget = target.toLowerCase();
             } else {
-                word = words.get(i);
+                word = split[i];
                 currentTarget = target;
             }
 
             if (contains) {
-                if (word.equals(currentTarget)) {
+                if (word.contains(currentTarget)) {
                     int startSpan = 0, endSpan = 0;
-                    startSpan = toString().indexOf(words.get(i));
-                    endSpan = startSpan + words.get(i).length();
+                    startSpan = toString().indexOf(split[i]);
+                    endSpan = startSpan + split[i].length();
 
                     if (startSpan < 0)
                         break;
@@ -110,10 +105,10 @@ public class SpannableWords extends SpannableStringBuilder {
                     setSpan(getSpan.getSpan(), startSpan, endSpan);
                 }
             } else {
-                if (word.contains(currentTarget)) {
+                if (word.equals(currentTarget)) {
                     int startSpan = 0, endSpan = 0;
-                    startSpan = toString().indexOf(words.get(i));
-                    endSpan = startSpan + words.get(i).length();
+                    startSpan = toString().indexOf(split[i]);
+                    endSpan = startSpan + split[i].length();
 
                     if (startSpan < 0)
                         break;
