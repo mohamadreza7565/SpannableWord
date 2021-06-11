@@ -27,7 +27,17 @@ public class MainActivity extends AppCompatActivity {
 
         binding.tvOne.setText(spanOne);
 
-        String text = "Hello my        friends";
+        String text = "\n" +
+                "Point it at me.\n" +
+                "Like you're gonna shoot me.\n" +
+                "\n" +
+                "Go ahead.\n" +
+                "\n" +
+                "Come on.\n" +
+                "\n" +
+                "That the way you hold a gun?\n" +
+                "\n" +
+                "That's the way I hold it, yeah\n";
         SpannableWords spanTwo = new SpannableWords(text).findAndSpan("friends", false, true, new SpannableWords.GetSpan() {
             @Override
             public Object getSpan() {

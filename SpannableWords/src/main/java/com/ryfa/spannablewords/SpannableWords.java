@@ -50,13 +50,10 @@ public class SpannableWords extends SpannableStringBuilder {
     public SpannableWords findAndSpan(String target, GetSpan getSpan) {
 
         ArrayList<String> words = new ArrayList<>();
-        String[] splitOne = toString().split("/n");
+        String[] splitOne = toString().split("\\W+");
 
         for (int i = 0; i < splitOne.length; i++) {
-            String[] splitWeo = splitOne[i].split("\\s+");
-            for (int j = 0; j < splitWeo.length; j++) {
-                words.add(splitWeo[j]);
-            }
+                words.add(splitOne[i]);
         }
 
         for (int i = 0; i < words.size(); i++) {
@@ -81,13 +78,10 @@ public class SpannableWords extends SpannableStringBuilder {
     public SpannableWords findAndSpan(String target, boolean contains, boolean toLowerCase, GetSpan getSpan) {
 
         ArrayList<String> words = new ArrayList<>();
-        String[] splitOne = toString().split("/n");
+        String[] splitOne = toString().split("\\W+");
 
         for (int i = 0; i < splitOne.length; i++) {
-            String[] splitWeo = splitOne[i].split("\\s+");
-            for (int j = 0; j < splitWeo.length; j++) {
-                words.add(splitWeo[j]);
-            }
+            words.add(splitOne[i]);
         }
 
         for (int i = 0; i < words.size(); i++) {
