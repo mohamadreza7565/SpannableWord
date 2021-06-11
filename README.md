@@ -9,7 +9,7 @@
 ## Dependency
 ```Gradle
 dependencies {
-	        implementation 'com.github.mohamadreza7565:SpannableWord:1.0.0'
+	implementation 'com.github.mohamadreza7565:SpannableWord:1.1.0'
 	}
 ```
 
