@@ -1,4 +1,5 @@
-# FindRandom
+# SpannableWord
+
 
 [![](https://jitpack.io/v/mohamadreza7565/SpannableWord.svg)](https://jitpack.io/#mohamadreza7565/SpannableWord)
 
